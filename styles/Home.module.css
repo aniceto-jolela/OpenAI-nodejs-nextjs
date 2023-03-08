@@ -5,6 +5,23 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  margin-top: -60px;
+}
+
+.position{
+  position: absolute;
+  margin-top: 8pc;
+  color: aliceblue;
+}
+.textareaQ{
+  width: 20pc;
+  resize: none;
+  margin-bottom: 1pc;
+}
+.textareaA{
+  width: 20pc;
+  height: 15pc;
+  resize: none;
 }
 
 .description {
