@@ -13,6 +13,14 @@
 [Api-keys](https://platform.openai.com/account/api-keys)
 
 
+  
+
+https://user-images.githubusercontent.com/79465134/224379009-00ec81a1-9b65-47b6-aeba-246d5a8a302c.mp4
+
+
+  
+<br/>
+  
 <img src="public/1.png" >
 
 <div/>
