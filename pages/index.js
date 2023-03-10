@@ -8,22 +8,20 @@ import Client from "./api/bearer";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [message, setMessage] = useState("");
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState("");
 
-  function handleSubmit(e) {
-    if (e.keyCode === 13 && e.shiftKey === false) {
-      console.log(e);
-      const params = {
-        model: "text-davinci-003",
-        prompt: e.target.value,
-        max_tokens: 60,
-        temperature: 0.8,
-      };
+  function handleSubmit() {
+    const params = {
+      model: "text-davinci-003",
+      prompt: question,
+      max_tokens: 60,
+      temperature: 0.8,
+    };
 
-      Client.post("https://api.openai.com/v1/completions", params)
-        .then((req) => setMessage(req.data.choices[0].text))
-        .catch((err) => console.log(err));
-    }
+    Client.post("https://api.openai.com/v1/completions", params)
+      .then((req) => setAnswer(req.data.choices[0].text))
+      .catch((err) => console.log(err));
   }
 
   return (
@@ -45,19 +43,21 @@ export default function Home() {
           <p className={inter.className}>Question : 🇱🇷</p>
           <textarea
             className={styles.textareaQ}
-            placeholder="You can make it question!"
-            onKeyDown={(e) => handleSubmit(e)}
+            placeholder="What is your issue?"
+            onKeyDown={(e) => setQuestion(e.target.value)}
           />
           <p className={inter.className}>Answer : 🇱🇷 </p>
           <textarea
             className={styles.textareaA}
             disabled
             placeholder="Load..."
-            value={message}
-          /><br/>
+            value={answer}
+          />
+          <br />
           <div className={styles.buttons}>
-          <button className={styles.buttons_all}>Clean</button>
-          <button className={styles.buttons_all}>Search</button>
+            <button className={styles.buttons_search} onClick={handleSubmit}>
+              Search
+            </button>
           </div>
         </div>
       </main>
