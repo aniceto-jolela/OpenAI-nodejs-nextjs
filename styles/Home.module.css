@@ -20,8 +20,22 @@
 }
 .textareaA{
   width: 20pc;
-  height: 15pc;
+  height: 14pc;
   resize: none;
+}
+.buttons{
+  text-align: center;
+  padding-top: 10px;
+  
+}
+.buttons_all{
+  background-color: rgba(117, 182, 184, 0.123);
+  padding: 3px;
+  width: 60px;
+  border-radius: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .description {
